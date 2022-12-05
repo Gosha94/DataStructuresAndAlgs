@@ -177,7 +177,7 @@ namespace CustomLinkedList.Tests
             linkedListUnderTests.AddAtHead(arrayForInsert[1]);
 
             // Act
-            linkedListUnderTests.AddAt(1, 888);
+            linkedListUnderTests.AddAtIndex(1, 888);
 
             // Assert
             var actualValueBeforeIndexNode = linkedListUnderTests.Get(1);
@@ -197,7 +197,7 @@ namespace CustomLinkedList.Tests
             linkedListUnderTests.AddAtHead(arrayForInsert[0]);
 
             // Act
-            linkedListUnderTests.AddAt(linkedListUnderTests.Count, correctListValue);
+            linkedListUnderTests.AddAtIndex(linkedListUnderTests.Count, correctListValue);
 
             // Assert
             var actualValueInTail = linkedListUnderTests.Get(linkedListUnderTests.Count - 1);
@@ -237,7 +237,7 @@ namespace CustomLinkedList.Tests
             linkedListUnderTests.AddAtHead(arrayForInsert[1]);
 
             // Act
-            linkedListUnderTests.AddAt(1, 888);
+            linkedListUnderTests.AddAtIndex(1, 888);
 
             // Assert
             var actualValueBeforeIndexNode = linkedListUnderTests.Get(1);
@@ -257,7 +257,7 @@ namespace CustomLinkedList.Tests
             linkedListUnderTests.AddAtHead(arrayForInsert[1]);
 
             // Act
-            linkedListUnderTests.AddAt(1, 888);
+            linkedListUnderTests.AddAtIndex(1, 888);
 
             // Assert
             var actualValueBeforeIndexNode = linkedListUnderTests.Get(1);

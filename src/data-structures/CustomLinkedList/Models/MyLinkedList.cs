@@ -6,6 +6,8 @@ public class MyLinkedList
 {
 
     private ListItem _head = null;
+    private ListItem _tail = null;
+
     private int _count = 0;
 
     public int Count => _count;
@@ -18,7 +20,7 @@ public class MyLinkedList
     public int Get(int index)
     {
 
-        if (index > Count || index < 0 || _head == null)
+        if (index > _count || index < 0 || _head == null)
         {
             return -1;
         }
@@ -47,14 +49,12 @@ public class MyLinkedList
     public void AddAtHead(int value)
     {
 
-        // 1. allocate a new node and assign data element
         var newNode = new ListItem(value);
-        // 2. make next node of new node as head
+
         newNode.Next = _head;
-        // 3. make new node as head
+
         _head = newNode;
         _count++;
-
     }
 
     /// <summary>
@@ -63,31 +63,30 @@ public class MyLinkedList
     /// <param name="value"></param>
     public void AddAtTail(int value)
     {
-        // 3. Check the Linked List is empty or not,
-        //    if empty make the new node as head
         if (_head == null)
         {
             AddAtHead(value);
+            _tail = _head;
         }
         else
         {
-            // 1. allocate node and assign data element
+            _tail = _head;
+            
+            while (_tail.Next != null)
+            {
+                _tail = _tail.Next;
+            }
+
             var newNode = new ListItem(value);
-
-            // 2. assign null to the next of new node
             newNode.Next = null;
+            
+            ListItem previousNodePointer = null;
 
-            // 4. Else, traverse to the last node            
-            var tempNode = _head;
-            while (tempNode.Next != null)
-                tempNode = tempNode.Next;
-
-            // 5. Change the next of last node to new node
-            tempNode.Next = newNode;
+            previousNodePointer = _tail;
+            previousNodePointer.Next = newNode;
+            _tail = newNode;
         }
-
         _count++;
-
     }
 
     /// <summary>
@@ -97,7 +96,7 @@ public class MyLinkedList
     /// </summary>
     /// <param name="index"></param>
     /// <param name="value"></param>
-    public void AddAt(int index, int value)
+    public void AddAtIndex(int index, int value)
     {
 
         // 1. allocate node to new element
@@ -154,7 +153,7 @@ public class MyLinkedList
     /// <summary>
     /// Delete the indexth node in the linked list, if the index is valid
     /// </summary>
-    /// <param name="position">Индекс удаляемого элемента</param>-
+    /// <param name="position">Index of deleter item</param>
     public void DeleteAtIndex(int index)
     {
 
@@ -197,24 +196,23 @@ public class MyLinkedList
         _count--;
     }
 
-    /// <summary>
-    /// Очистить список.
-    /// </summary>
+
     public void Clear()
     {
-        _head = null;        
+        _head = null;
+        _tail = null;
         _count = 0;
     }
 
-    //public IEnumerator GetEnumerator()
-    //{
-    //    var current = _head;
-    //    while (current != null)
-    //    {
-    //        yield return current.Data;
-    //        current = current.Next;
-    //    }
-    //}
+    public IEnumerator GetEnumerator()
+    {
+        var current = _head;
+        while (current != null)
+        {
+            yield return current.Data;
+            current = current.Next;
+        }
+    }
 
     //IEnumerator IEnumerable.GetEnumerator()
     //{
