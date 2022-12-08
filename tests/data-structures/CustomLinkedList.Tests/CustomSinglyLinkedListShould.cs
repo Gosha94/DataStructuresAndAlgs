@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using CustomLinkedList.Models;
+using NUnit.Framework;
 
 namespace CustomLinkedList.Tests
 {
