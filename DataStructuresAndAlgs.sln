@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList.Tests", "t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "src\data-structures\CustomLinkedList\CustomLinkedList.csproj", "{2C3B41C9-710A-4E54-9BD7-2E659C444957}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloydsCycleDetection", "src\algoritms\FloydsCycleDetection\FloydsCycleDetection.csproj", "{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2C3B41C9-710A-4E54-9BD7-2E659C444957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C3B41C9-710A-4E54-9BD7-2E659C444957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C3B41C9-710A-4E54-9BD7-2E659C444957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{049DE334-38D2-4A22-8E7A-A341A7D5857C} = {D7B580E7-C0F4-4F56-9540-268AA0BA366D}
 		{408B4058-E020-4FCB-8EFD-EAAD08365D60} = {049DE334-38D2-4A22-8E7A-A341A7D5857C}
 		{2C3B41C9-710A-4E54-9BD7-2E659C444957} = {5372970B-3E1C-4AED-A21B-406C1C7640E5}
+		{FAB4E781-DF31-473E-ACF2-66C57BEF9B2D} = {961BD599-5DB0-4309-9327-41B11EEC247A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C16878B0-572D-4797-B2DF-3A8AD50B128A}
