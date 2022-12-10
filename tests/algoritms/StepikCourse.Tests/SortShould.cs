@@ -7,7 +7,6 @@
         [Test]
         public void BubbleSort_GetUnsortedIntArray_ReturnsSortedIntArray()
         {
-
             // Arrange
             var expectedResult = new int[] { -10, -2, 0, 5, 10 };
             var unsortedInputArray = new int[] { 5, -2, 10, -10, 0 };
