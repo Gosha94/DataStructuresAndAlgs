@@ -1,34 +1,25 @@
 namespace StepikCourse.Tests
 {
-    public class Tests
+
+    [TestFixture]
+    public class BracketsCheckerShould
     {
-        [SetUp]
-        public void Setup()
-        {
-//            Sample Input 1:
-
-//([](){ ([])})
-//Sample Output 1:
-
-//Success
-//Sample Input 2:
-
-//()[]}
-//        Sample Output 2:
-
-//5
-//Sample Input 3:
-
-//{{[()]]
-//Sample Output 3:
-
-//7
-        }
 
         [Test]
-        public void Test1()
+        [TestCase("([](){ ([])})", "Success")]
+        [TestCase("( []() { ([]) } )", "Success")]
+        [TestCase("()[]}", "5")]
+        [TestCase("{{[()]]", "7")]
+        [TestCase("{}()[]", "Success")]
+        [TestCase("}", "1")]
+        [TestCase("{})", "3")]
+        [TestCase("foo(bar[i);", "10")]
+        [TestCase("foo(bar);", "Success")]
+        [TestCase("{", "1")]
+        public void CheckBrackets_ReturnsCorrectResult(string bracketCase, string expectedResult)
         {
-            Assert.Pass();
+            var actualResult = new BracketsChecker().CheckBrackets(bracketCase);
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
     }
 }

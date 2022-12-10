@@ -10,19 +10,65 @@ namespace StepikCourse
     {
         public string CheckBrackets(string codeWithBrackets)
         {
-            //var bracketPairsDict = new Dictionary<char, char>()
-            //{
-            //    { '[',']' },
-            //    { '{','}' },
-            //    { '(',')' },
-            //};
+            var bracketPairsDict = new Dictionary<char, char>()
+            {
+                { '[',']' },
+                { '{','}' },
+                { '(',')' },
+            };
 
-            var result = codeWithBrackets
-                .Where((c) => c == '[' || c == ']' || c == '{' || c == '}' || c == '(' || c == ')')
-                .Select((c, i) => new { c, i }).ToList();
+            var bracketsList = codeWithBrackets
+                .Select((c, i) => new BracketItem { Char = c, Index = i, Position = i + 1 })
+                .Where((c) => c.Char == '[' || c.Char == ']' || c.Char == '{' || c.Char == '}' || c.Char == '(' || c.Char == ')')
+                .ToList();
 
-            return "";
+            var openedBracketStack = new Stack<BracketItem>();
+
+            string result = string.Empty;
+
+            foreach (var item in bracketsList)
+            {
+
+                if (bracketPairsDict.ContainsKey(item.Char))
+                {
+                    openedBracketStack.Push(item);
+                }
+                else
+                {
+                    if (openedBracketStack.Count != 0)
+                    {
+                        if (bracketPairsDict[openedBracketStack.Pop().Char] != item.Char)
+                        {
+                            return item.Position.ToString();
+                        }                        
+                    }
+                    else
+                    {
+                        return item.Position.ToString();
+                    }
+                }
+            }
+
+            if (openedBracketStack.Count > 0)
+            {
+                return openedBracketStack.Pop().Position.ToString();
+            }
+            else
+            {
+                return "Success";
+            }
+            
 
         }
     }
+
+    public class BracketItem
+    {
+        public char Char { get; set; }
+        
+        public int Index { get; set; }
+
+        public int Position { get; set; }
+    }
+
 }
