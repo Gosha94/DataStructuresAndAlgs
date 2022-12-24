@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepikCourse", "src\algorit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepikCourse.Tests", "tests\algoritms\StepikCourse.Tests\StepikCourse.Tests.csproj", "{4600AFF9-4D7D-4672-AF57-D4C7E195C281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleWrapper", "src\algoritms\ConsoleWrapper\ConsoleWrapper.csproj", "{DEAE84C4-49D5-415C-8F9A-9E46A94C1968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleWrapper", "src\algoritms\ConsoleWrapper\ConsoleWrapper.csproj", "{DEAE84C4-49D5-415C-8F9A-9E46A94C1968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenges", "src\algoritms\Challenges\Challenges\Challenges.csproj", "{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenges.Tests", "tests\algoritms\Challenges.Tests\Challenges.Tests\Challenges.Tests.csproj", "{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{DEAE84C4-49D5-415C-8F9A-9E46A94C1968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEAE84C4-49D5-415C-8F9A-9E46A94C1968}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEAE84C4-49D5-415C-8F9A-9E46A94C1968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +84,8 @@ Global
 		{4332E09B-1772-4FBA-9E96-DF3185D4FAC3} = {961BD599-5DB0-4309-9327-41B11EEC247A}
 		{4600AFF9-4D7D-4672-AF57-D4C7E195C281} = {108632D4-6E3D-43AD-BFC5-02F8107E37ED}
 		{DEAE84C4-49D5-415C-8F9A-9E46A94C1968} = {961BD599-5DB0-4309-9327-41B11EEC247A}
+		{D9ED98D9-EE2A-4AF6-9B69-F8211DFC80F5} = {961BD599-5DB0-4309-9327-41B11EEC247A}
+		{C37BF94C-6CA8-4FC8-88DF-940C5CFF0C52} = {108632D4-6E3D-43AD-BFC5-02F8107E37ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C16878B0-572D-4797-B2DF-3A8AD50B128A}
