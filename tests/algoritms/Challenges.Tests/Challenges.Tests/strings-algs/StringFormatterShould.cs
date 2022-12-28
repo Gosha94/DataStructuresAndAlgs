@@ -1,13 +1,13 @@
 ﻿using Challenges.strings_algs;
-using Xunit;
 
-namespace Challenges.Tests
+namespace Challenges.Tests.strings_algs
 {
 
     public class StringFormatterShould
     {
 
         [Theory]
+        [Trait("Category", "strings-algs")]
         [InlineData(3, "123", "123")]
         [InlineData(3, "abc de fghij", "abc\ndef\nghi\nj")]
         [InlineData(2, "1 23 456", "12\n34\n56")]

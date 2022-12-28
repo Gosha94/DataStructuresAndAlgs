@@ -45,7 +45,22 @@
 
         public static int GetMaxRowSum(int[][] accounts)
         {
-            return -1;
+            var maxRowSum = 0;
+
+            for (int i = 0; i < accounts.Length; i++)
+            {
+                var currRowSum = 0;
+
+                for (int j = 0; j < accounts[i].Length; j++)
+                {
+                    currRowSum += accounts[i][j];
+                }
+
+                maxRowSum = Math.Max(maxRowSum, currRowSum);
+
+            }
+            
+            return maxRowSum;
         }
 
         #endregion

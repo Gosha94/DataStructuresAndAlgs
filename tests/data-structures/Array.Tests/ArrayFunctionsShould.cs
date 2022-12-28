@@ -43,10 +43,16 @@ namespace Array.Tests
 
         public static IEnumerable<TestCaseData> combination_tests()
         {
-            yield return new TestCaseData(new int[][] {
-                                                    new int[] { 1, 2 },
-                                                    new int[] { 1, 2, 3 },
-                                                    new int[] { 1, 2, 3, 4, 5 }}, 2);
+
+            var testCases = new List<TestCaseData>()
+            {
+                new TestCaseData(new int[][] { new int[] { 1, 2 }, new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5 }}, 15),
+                new TestCaseData(new int[][] { new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 } }, 6),
+                new TestCaseData(new int[][] { new int[] { 1, 5 }, new int[] { 7, 3 }, new int[] { 3, 5 } }, 10),
+                new TestCaseData(new int[][] { new int[] { 2, 8, 7 }, new int[] { 7, 1, 3 }, new int[] { 1, 9, 5 } }, 17),
+            };
+
+            return testCases;
         }
 
         [Test]
