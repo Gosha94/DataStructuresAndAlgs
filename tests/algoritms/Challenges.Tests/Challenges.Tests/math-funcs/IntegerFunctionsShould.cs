@@ -26,7 +26,8 @@ namespace Challenges.Tests
 
             // Act
             var actualValue = IntegerFunctions.GetNextClosestTo(testCaseValue);
-
+            
+            // Assert
             Assert.Equal(expectedValue, actualValue);
         }
 
@@ -50,6 +51,7 @@ namespace Challenges.Tests
             // Act
             var actualValue = IntegerFunctions.GetNextClosestTo_V2(testCaseValue);
 
+            // Assert
             Assert.Equal(expectedValue, actualValue);
         }
     }
