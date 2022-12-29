@@ -1,12 +1,13 @@
 ﻿using Challenges.math_funcs;
 
-namespace Challenges.Tests
+namespace math_funcs
 {
 
     public class IntegerFunctionsShould
     {
 
         [Theory]
+        [Trait("Category", "math-funcs")]
         [InlineData(0, 1)]
         [InlineData(2, 3)]
         [InlineData(102, 333)]
@@ -18,7 +19,6 @@ namespace Challenges.Tests
         [InlineData(777, 800)]
         [InlineData(3025, 4111)]
         [InlineData(654321, 700000)]
-        
         public void GetNextClosestTo_ReceiveIntValue_ReturnsClosestValueToInput(int testCaseValue, int expectedValue)
         {
 

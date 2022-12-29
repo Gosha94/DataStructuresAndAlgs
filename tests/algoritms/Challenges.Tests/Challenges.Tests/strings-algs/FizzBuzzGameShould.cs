@@ -1,6 +1,6 @@
 ﻿using Challenges.strings_algs;
 
-namespace Challenges.Tests.strings_algs
+namespace strings_algs
 {
     public class FizzBuzzGameShould
     {

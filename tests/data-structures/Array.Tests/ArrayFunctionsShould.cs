@@ -1,5 +1,6 @@
-namespace Array.Tests
+namespace Array
 {
+
     public class ArrayFunctionsShould
     {
 
