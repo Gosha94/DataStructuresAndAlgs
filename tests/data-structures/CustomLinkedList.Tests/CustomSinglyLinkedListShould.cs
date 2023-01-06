@@ -8,8 +8,8 @@ namespace CustomLinkedList.Tests
     public class CustomSinglyLinkedListShould
     {
 
-        private const int correctListValue = 200;
-        private const int errorOfGettingListValue = -1;
+        private const int CorrectListValue = 200;
+        private const int ErrorOfGettingListValue = -1;
 
         #region Initialize Tests
 
@@ -37,13 +37,13 @@ namespace CustomLinkedList.Tests
         {
             // Arrange
             var listUnderTests = new MyLinkedList();
-            listUnderTests.AddAtHead(correctListValue);
+            listUnderTests.AddAtHead(CorrectListValue);
 
             // Act
             var actualValueFromList = listUnderTests.Get(0);
 
             // Assert
-            Assert.AreEqual(actualValueFromList, correctListValue);
+            Assert.AreEqual(actualValueFromList, CorrectListValue);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace CustomLinkedList.Tests
             var actualValueFromList = listUnderTests.Get(1);
 
             // Assert
-            Assert.AreEqual(actualValueFromList, errorOfGettingListValue);
+            Assert.AreEqual(actualValueFromList, ErrorOfGettingListValue);
         }
 
         #endregion
@@ -190,14 +190,14 @@ namespace CustomLinkedList.Tests
         public void AddValueToTailIfIndexEqualsListLength(int[] arrayForInsert)
         {
             // Arrange
-            var expectedValueInTail = correctListValue;
+            var expectedValueInTail = CorrectListValue;
 
             var linkedListUnderTests = new MyLinkedList();
             linkedListUnderTests.AddAtHead(arrayForInsert[0]);
             linkedListUnderTests.AddAtHead(arrayForInsert[0]);
 
             // Act
-            linkedListUnderTests.AddAtIndex(linkedListUnderTests.Count, correctListValue);
+            linkedListUnderTests.AddAtIndex(linkedListUnderTests.Count, CorrectListValue);
 
             // Assert
             var actualValueInTail = linkedListUnderTests.Get(linkedListUnderTests.Count - 1);
@@ -331,6 +331,25 @@ namespace CustomLinkedList.Tests
         }
 
         #endregion
+
+        [Test]
+        [TestCase(new[] { 1, 2, 3, 4, 5 })]
+        //[TestCase(new [] { 1, 2, 3, 4, 5, 6 })]
+        [Category("LinkedList")]
+        public void GetLinkedListMiddle(int[] inputData)
+        {
+   
+            // Arrange
+            var linkedList = TestHelpers.CreateLinkedListFromArray(inputData);
+
+            // Act
+            var middleNode = MyLinkedList.GetLinkedListMiddle(linkedList.GetHead());
+
+            // Assert
+
+        }
+
+
 
     }
 

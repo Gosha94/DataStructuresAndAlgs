@@ -26,20 +26,6 @@ public static class TestHelpers
         return list;
     }
 
-    //private static int[] RevertArray(int[] array)
-    //{
-    //    var resultArray = new int[array.Length];
-    //    var counter = 0;
-
-    //    for (int i = array.Length; i <= 0; i--)
-    //    {
-    //        resultArray[counter] = array[i];
-    //        counter++;
-    //    }
-
-    //    return resultArray;
-    //}
-
     #endregion
 
 }

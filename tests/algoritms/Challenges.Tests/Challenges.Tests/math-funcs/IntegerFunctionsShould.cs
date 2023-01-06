@@ -54,5 +54,22 @@ namespace math_funcs
             // Assert
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(1, 1)]
+        [InlineData(8, 4)]
+        [InlineData(14, 6)]
+        public void GetReducingStepsToZero_ReceiveIntNumber_ReturnsCorrectOperationsNumber(int testCaseValue, int expectedValue)
+        {
+            // Arrange
+
+            // Act
+            var actualValue = IntegerFunctions.GetReducingStepsToZero(testCaseValue);
+
+            // Assert
+            Assert.Equal(expectedValue, actualValue);
+        }
+
     }
 }

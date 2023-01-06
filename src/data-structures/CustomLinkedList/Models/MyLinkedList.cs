@@ -13,6 +13,34 @@ public class MyLinkedList
     public int Count => _count;
 
     /// <summary>
+    /// !!! Drop Later
+    /// </summary>
+    /// <returns></returns>
+    public ListItem GetHead()
+    {
+        return _head;
+    }
+
+    /// <summary>
+    /// Change later for return Index of Middle
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public static ListItem GetLinkedListMiddle(ListItem head)
+    {
+        ListItem middlePointer = head;
+        ListItem currentPointer = head;
+
+        while (currentPointer != null && currentPointer.Next != null)
+        {
+            middlePointer = middlePointer.Next;
+            currentPointer = currentPointer.Next.Next;
+        }
+
+        return middlePointer;
+    }
+
+    /// <summary>
     /// Get the value of the index th node in the linked list
     /// </summary>
     /// <param name="index"></param>
@@ -196,7 +224,6 @@ public class MyLinkedList
         _count--;
     }
 
-
     public void Clear()
     {
         _head = null;
@@ -213,14 +240,5 @@ public class MyLinkedList
             current = current.Next;
         }
     }
-
-    //IEnumerator IEnumerable.GetEnumerator()
-    //{
-    //    // Просто возвращаем перечислитель, определенный выше.
-    //    // Это необходимо для реализации интерфейса IEnumerable
-    //    // чтобы была возможность перебирать элементы связного списка операцией foreach.
-
-    //    return ((IEnumerable)this).GetEnumerator();
-    //}   
 
 }

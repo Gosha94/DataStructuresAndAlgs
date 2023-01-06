@@ -119,5 +119,53 @@ namespace Challenges.math_funcs
 
         }
 
+        public static int GetReducingStepsToZero(int inputNumber)
+        {
+            
+            var operationsCounter = 0;
+
+            while (inputNumber > 0)
+            {
+                var isEven = inputNumber % 2 == 0;
+
+                if (isEven)
+                {
+                    inputNumber /= 2;
+                }
+                else
+                {
+                    inputNumber--;
+                }
+
+                operationsCounter++;
+            }
+
+            return operationsCounter;
+        }
+
+        public static int GetReducingStepsToZero_V2(int inputNumber)
+        {
+            // Bit shift by 1 to the right if number is Even (check last  by bitmask 1)
+            var operationsCounter = 0;
+
+            while (inputNumber > 0)
+            {
+                var isEven = (inputNumber & 1) == 0;
+
+                if (isEven)
+                {
+                    inputNumber >>= 1;
+                }
+                else
+                {
+                    inputNumber--;
+                }
+
+                operationsCounter++;
+            }
+
+            return operationsCounter;
+        }
+
     }
 }

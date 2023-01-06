@@ -21,6 +21,26 @@ namespace strings_algs
             // Assert
             Assert.Equal(expectedVal, actualVal);
         }
-        
+
+        [Theory]
+        [Trait("Category", "strings-algs")]
+        [InlineData("a", "b", false)]
+        [InlineData("aa", "ab", false)]
+        [InlineData("aa", "aab", true)]
+        [InlineData("aab", "baa", true)]
+        [InlineData("some string!", " meoss!gnirt", true)]
+        [InlineData("some string", "meoss!gnirt ", true)]
+        [InlineData("some string!", "meoss gnirt", false)]
+        public void CanConstruct_GetConstructAndPattern_ReturnsContainFlag(string testCaseConstruct, string testCasePattern, bool expectedVal)
+        {
+            // Arrange
+
+            // Act
+            var actualVal = StringFormatter.CanConstruct(testCaseConstruct, testCasePattern);
+
+            // Assert
+            Assert.Equal(expectedVal, actualVal);
+        }
+
     }
 }

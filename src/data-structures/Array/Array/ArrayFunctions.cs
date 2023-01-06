@@ -63,6 +63,32 @@
             return maxRowSum;
         }
 
+        public int CountNumbersWithEvenDigits(int[] nums)
+        {
+            var evenCounter = 0;
+
+            foreach (var num in nums)
+            {
+                var currentNum = num;
+                var digitCounter = 0;
+
+                while (currentNum > 0)
+                {
+                    currentNum /= 10;
+                    digitCounter++;
+                }
+
+                if (digitCounter % 2 == 0)
+                {
+                    evenCounter++;
+                }
+            }
+
+            return evenCounter;
+        }
+
+
+
         #endregion
 
 
