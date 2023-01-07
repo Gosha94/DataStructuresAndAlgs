@@ -1,4 +1,4 @@
-﻿namespace Array
+﻿namespace CustomArray
 {
     public class ArrayFunctions
     {
@@ -87,7 +87,21 @@
             return evenCounter;
         }
 
+        public int[] SortedSquares(int[] nums)
+        {
+            for (var i = 0; i < nums.Length; i++)
+            {
+                nums[i] *= nums[i];
+            }
 
+            Array.Sort(nums); 
+            return nums;
+        }
+
+        public void DuplicateZeros(int[] arr)
+        {
+
+        }
 
         #endregion
 

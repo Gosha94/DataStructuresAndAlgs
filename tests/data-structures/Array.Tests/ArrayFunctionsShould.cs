@@ -1,4 +1,6 @@
-namespace Array
+using CustomArray;
+
+namespace CustomArray
 {
 
     public class ArrayFunctionsShould
