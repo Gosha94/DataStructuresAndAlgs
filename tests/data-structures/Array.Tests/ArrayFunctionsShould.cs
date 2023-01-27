@@ -74,5 +74,24 @@ namespace CustomArray
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [Test]
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 })]
+        [TestCase(new int[] { 0, 2, 3, 4 }, new int[] { 0, 0, 2, 3 })]
+        [TestCase(new int[] { 1, 1, 1, 0 }, new int[] { 1, 1, 1, 0 })]
+        [TestCase(new int[] { 1, 0, 2, 3, 0, 4, 5, 0 }, new int[] { 1, 0, 0, 2, 3, 0, 0, 4 })]
+        [Category("ArrayShifting" )]
+        public void DuplicateZeros_GetIntArray_DuplicateEachZeroUntilTheArrayEnds(int[] testCaseArr, int[] expectedResult)
+        {
+            // Arrange
+
+            // Act
+            ArrayFunctions.DuplicateZeros(testCaseArr);
+
+            // Assert
+
+            Assert.That(testCaseArr, Is.EqualTo(expectedResult));
+        }
+        
+
     }
 }

@@ -63,7 +63,7 @@
             return maxRowSum;
         }
 
-        public int CountNumbersWithEvenDigits(int[] nums)
+        public static int CountNumbersWithEvenDigits(int[] nums)
         {
             var evenCounter = 0;
 
@@ -87,7 +87,7 @@
             return evenCounter;
         }
 
-        public int[] SortedSquares(int[] nums)
+        public static int[] SortedSquares(int[] nums)
         {
             for (var i = 0; i < nums.Length; i++)
             {
@@ -98,9 +98,30 @@
             return nums;
         }
 
-        public void DuplicateZeros(int[] arr)
+        public static void DuplicateZeros(int[] arr)
         {
+            var lastZeroIndex = 0;
 
+            while (lastZeroIndex < arr.Length - 1)
+            {
+                if (arr[lastZeroIndex] == 0)
+                {
+                    int lastTemp = 0;
+
+                    for (var i = lastZeroIndex + 1; i <= arr.Length - 1; i++)
+                    {
+                        var nextTemp = arr[i];
+
+                        arr[i] = lastTemp;
+                        lastTemp = nextTemp;
+                    }
+                    lastZeroIndex += 2;
+                }
+                else
+                {
+                    lastZeroIndex++;
+                }
+            }
         }
 
         #endregion
