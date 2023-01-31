@@ -91,7 +91,24 @@ namespace CustomArray
 
             Assert.That(testCaseArr, Is.EqualTo(expectedResult));
         }
-        
+
+        [Test]
+        [TestCase(new int[] { 1, 2, 3, 0, 0, 0 }, 3, new int[] { 2, 5, 6 }, 3,  new int[] { 1, 2, 2, 3, 5, 6 })]
+        [TestCase(new int[] { 1 }, 1, new int[] {}, 0, new int[] { 1 })]
+        [TestCase(new int[] { 0 }, 0, new int[] { 1 }, 1, new int[] { 1 })]
+        [Category("ArrayMerging")]
+        public void Merge_GetTwoArrays_ReturnsFillAndSortedFirstArray(int[] testCaseFirstArr, int firstArrCount, int[] testCaseSecondArr, int secondArrCount, int[] expectedResult)
+        {
+
+            // Arrange
+
+            // Act
+            ArrayFunctions.Merge(testCaseFirstArr, firstArrCount, testCaseSecondArr, secondArrCount);
+
+            // Assert
+            Assert.That(testCaseFirstArr, Is.EqualTo(expectedResult));
+        }
+
 
     }
 }
