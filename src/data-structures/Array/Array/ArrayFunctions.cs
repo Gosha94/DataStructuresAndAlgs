@@ -134,11 +134,36 @@
         /// <param name="n">Existing elements in the second array that we can merge</param>
         public static void Merge(int[] nums1, int m, int[] nums2, int n)
         {
+            var firstArrCurrPtr = m - 1;
+            var secondArrCurrPtr = n - 1;
+            var lastMaxElemPtr = m + n - 1;
 
+            while (lastMaxElemPtr >= 0)
+            {
+                if (firstArrCurrPtr >= 0 && secondArrCurrPtr >= 0)
+                {
+                    if (nums1[firstArrCurrPtr] >= nums2[secondArrCurrPtr])
+                    {
+                        nums1[lastMaxElemPtr--] = nums1[firstArrCurrPtr--];
+                    }
+                    else
+                    {
+                        nums1[lastMaxElemPtr--] = nums2[secondArrCurrPtr--];
+                    }
+                }
+                else if (secondArrCurrPtr >= 0)
+                {
+                    nums1[lastMaxElemPtr--] = nums2[secondArrCurrPtr--];
+                }
+                else
+                {
+                    break;
+                }
+                
+            }
         }
 
         #endregion
-
 
     }
 }
