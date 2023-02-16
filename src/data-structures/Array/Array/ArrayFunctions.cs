@@ -124,14 +124,6 @@
             }
         }
 
-        /// <summary>
-        /// The final sorted array should not be returned by the function, but instead be stored inside the array nums1.
-        /// To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
-        /// </summary>
-        /// <param name="nums1">First array</param>
-        /// <param name="m">Empty elements count in the fisrt array that available to merge</param>
-        /// <param name="nums2">Second array</param>
-        /// <param name="n">Existing elements in the second array that we can merge</param>
         public static void Merge(int[] nums1, int m, int[] nums2, int n)
         {
             var firstArrCurrPtr = m - 1;
@@ -161,6 +153,99 @@
                 }
                 
             }
+        }
+
+        public static int RemoveElement(int[] numsArr, int valueForDelete)
+        {
+            var iterationPointer = 0;
+            var lastElemPointer = numsArr.Length - 1;
+
+            while (iterationPointer <= lastElemPointer)
+            {
+                if (numsArr[iterationPointer] == valueForDelete)
+                {
+                    if (numsArr[lastElemPointer] == valueForDelete)
+                    {
+                        lastElemPointer--;
+                        continue;
+                    }
+
+                    var temp = numsArr[iterationPointer];
+
+                    numsArr[iterationPointer] = numsArr[lastElemPointer];
+                    numsArr[lastElemPointer--] = temp;
+                }
+
+                iterationPointer++;
+            }
+
+            return ++lastElemPointer;
+        }
+
+        public static int RemoveDuplicates(int[] numsArr)
+        {
+            int uniquePointer = 0;
+            int enumeratePointer = uniquePointer + 1;
+
+            while (enumeratePointer < numsArr.Length)
+            {
+
+                if (numsArr[uniquePointer] != numsArr[enumeratePointer])
+                {
+                    numsArr[++uniquePointer] = numsArr[enumeratePointer];
+                }
+
+                enumeratePointer++;
+            }
+
+            return uniquePointer + 1;
+        }
+
+        public static bool CheckIfValueAndItsDoubleExistIn_HashSetVersion(int[] arr)
+        {
+
+            Array.Sort(arr);
+
+            var map = new HashSet<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+
+                if (i > 0 && arr[i] != 0)
+                {
+                    continue;
+                }
+
+                if (map.Contains(arr[i] * 2))
+                {
+                    return true;
+                }
+
+                map.Add(arr[i]);
+            }
+
+            return false;
+        }
+
+        public static bool CheckIfValueAndItsDoubleExistIn_BinarySearchVersion(int[] arr)
+        {
+            Array.Sort(arr);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                var indexOfFoundedElem = Array.BinarySearch(arr, arr[i] * 2);
+                
+                if (indexOfFoundedElem >= 0 && indexOfFoundedElem != i)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool ValidMountainArray(int[] arr)
+        {
+            return false;
         }
 
         #endregion

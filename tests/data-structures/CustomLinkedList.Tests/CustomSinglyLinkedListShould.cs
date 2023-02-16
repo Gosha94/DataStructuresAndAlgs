@@ -66,7 +66,7 @@ namespace CustomLinkedList.Tests
         #region AddAtHead() Tests
 
         [Test]
-        [TestCase(new int[] { 999 })]
+        [TestCase(new [] { 999 })]
         [Category("Unit")]
         public void CorrectAddValueAtHead(int[] arrayForInsert)
         {
@@ -84,7 +84,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Ignore("Test is not ready!")]
         [Category("Unit")]
         public void ChangeCountPropWhenHeadValueIsAdded(int[] arrayForInsert)
@@ -107,7 +107,7 @@ namespace CustomLinkedList.Tests
         #region AddAtTail() Tests
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void AddValueAtHeadIfListEmpty(int[] arrayForInsert)
         {
@@ -124,7 +124,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void CorrectAddValueAtTail(int[] arrayForInsert)
         {
@@ -143,7 +143,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Ignore("Test is not ready!")]
         [Category("Unit")]
         public void ChangeCountPropWhenWhenTailValueIsAdded(int[] arrayForInsert)
@@ -165,7 +165,7 @@ namespace CustomLinkedList.Tests
         #region AddAtIndex() Tests
 
         [Test]
-        [TestCase(new int[] { 999, 777 })]
+        [TestCase(new [] { 999, 777 })]
         [Category("Unit")]
         public void CorrectAddValueAtIndexBeforeNodeWithThisIndex(int[] arrayForInsert)
         {
@@ -185,7 +185,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void AddValueToTailIfIndexEqualsListLength(int[] arrayForInsert)
         {
@@ -205,7 +205,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void NotAddValueToListIfIndexGreaterThanLength(int[] arrayForInsert)
         {
@@ -225,7 +225,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 999, 777 })]
+        [TestCase(new [] { 999, 777 })]
         [Category("Unit")]
         public void IncrementListCountWhenValueSuccessfullyAdded(int[] arrayForInsert)
         {
@@ -245,7 +245,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 999, 777 })]
+        [TestCase(new [] { 999, 777 })]
         [Category("Unit")]
         public void NotIncrementListCountWhenValueNotAdded(int[] arrayForInsert)
         {
@@ -283,7 +283,7 @@ namespace CustomLinkedList.Tests
         // throw new ArgumentException("Значение должно быть больше либо равно 0, а также меньше либо равно 1000");
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void ThrowAnErrorIfIndexOutOfConstraints(int[] arrayForInsert)
         {
@@ -307,7 +307,7 @@ namespace CustomLinkedList.Tests
         }
 
         [Test]
-        [TestCase(new int[] { 888 })]
+        [TestCase(new [] { 888 })]
         [Category("Unit")]
         public void ThrowAnErrorIfValueOutOfConstraints(int[] arrayForInsert)
         {

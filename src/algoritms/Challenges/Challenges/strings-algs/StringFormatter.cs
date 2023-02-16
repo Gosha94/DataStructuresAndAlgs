@@ -63,5 +63,49 @@ namespace Challenges.strings_algs
 
             return builder.ToString().TrimEnd();
         }
+
+        public static bool CheckInclusion(string strForFind, string strWhereFind)
+        {
+            var map = new HashSet<char>();
+            var result = false;
+            var searchStrLength = strForFind.Length;
+            var whereFindLength = strWhereFind.Length;
+
+            if (searchStrLength > whereFindLength)
+                return false;
+
+            foreach (var ch in strForFind)
+            {
+                map.Add(ch);
+            }
+
+            var sequenceCounter = 0;
+
+            foreach (var ch in strWhereFind)
+            {
+
+                if (map.Contains(ch) || ++sequenceCounter == searchStrLength)
+                {
+                    sequenceCounter++;
+                }
+                else
+                {
+                    sequenceCounter = 0;
+                }
+
+            }
+
+            if (sequenceCounter != searchStrLength)
+            {
+                result = !result;
+            }
+            else
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
     }
 }

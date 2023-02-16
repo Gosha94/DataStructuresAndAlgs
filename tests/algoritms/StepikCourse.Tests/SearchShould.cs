@@ -8,7 +8,7 @@
         public void BinarySearch_GetSortedIntArrayAndNumberForFind_ReturnsIndexOfFoundedElement()
         {
             // Arrange
-            var inputArr = new int[] { 10, 11, 12, 13, 14, 15 };
+            var inputArr = new [] { 10, 11, 12, 13, 14, 15 };
             var cpuOperations = 0;
             var expectedResult = 0;
 

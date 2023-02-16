@@ -42,5 +42,21 @@ namespace strings_algs
             Assert.Equal(expectedVal, actualVal);
         }
 
+        [Theory]
+        [InlineData("ab", "eidbaooo", true)]
+        [InlineData("ab", "eidboaoo", false)]
+        [InlineData("hello", "ooolleoooleh", false)]
+        [Trait("Category", "strings-algs")]
+        public void CheckInclusion_GetTwoStrings_ReturnsIsIncludeFlag(string strForFind, string strWhereFind, bool expectedIsInclude)
+        {
+            // Arrange
+
+            // Act
+            var actualIsInclude = StringFormatter.CheckInclusion(strForFind, strWhereFind);
+
+            // Assert
+            Assert.Equal(expectedIsInclude, actualIsInclude);
+        }
+
     }
 }

@@ -6,7 +6,7 @@ namespace FloydsCycleDetection
     {
         static void Main(string[] args)
         {
-            var result = DuplicateFinder.FindDuplicateNumber(new int[] {3, 1, 1, 4, 2});
+            var result = DuplicateFinder.FindDuplicateNumber(new [] {3, 1, 1, 4, 2});
             Console.WriteLine(result);
         }
     }
