@@ -245,7 +245,107 @@
 
         public static bool ValidMountainArray(int[] arr)
         {
-            return false;
+
+            var leftPointer = 0;
+            var rightPointer = arr.Length - 1;
+
+            while (leftPointer < arr.Length - 1 && arr[leftPointer] < arr[leftPointer + 1])
+            {
+                leftPointer++;
+            }
+
+            while (rightPointer > 0 && arr[rightPointer - 1] > arr[rightPointer])
+            {
+                rightPointer--;
+            }
+            
+            return leftPointer > 0 && leftPointer == rightPointer && rightPointer < arr.Length - 1;
+        }
+
+        public static int[] ReplaceEachValueToGreatestFromRightToLeftSide(int[] arr)
+        {
+            int[] resultArr = new int[arr.Length];
+            Array.Copy(arr, resultArr, arr.Length);
+            var maxToRightVal = -1;
+            var temp = 0;
+
+            for (int i = resultArr.Length - 1; i >= 0; i--)
+            {
+                if (resultArr[i] > maxToRightVal)
+                {
+                    temp = resultArr[i];
+                    resultArr[i] = maxToRightVal;
+                    maxToRightVal = temp;
+                }
+                else
+                {
+                    resultArr[i] = maxToRightVal;
+                }
+            }
+
+            return resultArr;
+        }
+
+        public static void MoveZeroes(int[] nums)
+        {
+            if (nums.Length <= 1)
+            {
+                return;
+            }
+
+            int lastNotZeroPointer = 0;
+            int searchNotZeroPointer = lastNotZeroPointer + 1;
+
+            while (searchNotZeroPointer < nums.Length)
+            {
+
+                if (nums[lastNotZeroPointer] != 0)
+                {
+                    lastNotZeroPointer++;
+                }
+
+                if (nums[searchNotZeroPointer] != 0 && nums[lastNotZeroPointer] == 0)
+                {
+                    var temp = nums[lastNotZeroPointer];
+                    nums[lastNotZeroPointer] = nums[searchNotZeroPointer];
+                    nums[searchNotZeroPointer] = temp;
+
+                    lastNotZeroPointer++;
+                }
+                searchNotZeroPointer++;
+            }
+        }
+
+        public static int[] SortArrayByParity(int[] nums)
+        {
+            if (nums.Length <= 1)
+            {
+                return nums;
+            }
+
+            int lastEvenNumbPointer = 0;
+            int searchEvenNumbPointer = lastEvenNumbPointer + 1;
+
+            while (searchEvenNumbPointer < nums.Length)
+            {
+
+                if (nums[lastEvenNumbPointer] % 2 == 0)
+                {
+                    lastEvenNumbPointer++;
+                }
+
+                if (nums[searchEvenNumbPointer] % 2 == 0 && nums[lastEvenNumbPointer] % 2 != 0 )
+                {
+                    var temp = nums[lastEvenNumbPointer];
+                    nums[lastEvenNumbPointer] = nums[searchEvenNumbPointer];
+                    nums[searchEvenNumbPointer] = temp;
+
+                    lastEvenNumbPointer++;
+                }
+                searchEvenNumbPointer++;
+            }
+
+            return nums;
         }
 
         #endregion

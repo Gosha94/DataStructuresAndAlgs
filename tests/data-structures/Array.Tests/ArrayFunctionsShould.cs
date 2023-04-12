@@ -181,5 +181,77 @@ namespace CustomArray
             // Assert
             Assert.That(actualIsExist, Is.EqualTo(expectedIsExist));
         }
+
+        [Test]
+        [TestCase(new[] { 5, 2, 1, 4 }, false)]
+        [TestCase(new[] { 5, 8, 8 }, false)]
+        [TestCase(new[] { 1, 2, 4, 2 }, true)]
+        [TestCase(new[] { 2 }, false)]
+        [TestCase(new[] { 2, 1 }, false)]
+        [TestCase(new[] { 1, 3, 2 }, true)]
+        [TestCase(new[] { 3, 5, 5 }, false)]
+        [TestCase(new[] { 0, 3, 2, 1 }, true)]
+        [TestCase(new[] { 0, 1, 2, 4, 2, 1 }, true)]
+        [TestCase(new[] { 3, 7, 6, 4, 3, 0, 1, 0 }, false)]
+        [Category("TwoPointersAndAnArray")]
+        public void ValidMountainArray_GetArray_ReturnsIsMountainArrayFlag(int[] testCaseArr, bool expectedIsMountainArray)
+        {
+            // Arrange
+
+            // Act
+            var actualIsMountainArray = ArrayFunctions.ValidMountainArray(testCaseArr);
+
+            // Assert
+            Assert.That(actualIsMountainArray, Is.EqualTo(expectedIsMountainArray));
+        }
+
+        [Test]
+        [TestCase(new[] { 400 }, new[] { -1 })]
+        [TestCase(new[] { 17, 18, 5, 4, 6, 1 }, new[] { 18, 6, 6, 6, 1, -1 })]
+        [Category("ArrayInPlaceOperations")]
+        public void ReplaceEachValueToGreatestFromRightToLeftSide_GetArray_ReturnsArrayWithGreatestElemsOnRightSide(int[] testCaseArr, int[] expectedArr)
+        {
+            // Arrange
+
+            // Act
+            var actualArr = ArrayFunctions.ReplaceEachValueToGreatestFromRightToLeftSide(testCaseArr);
+
+            // Assert
+            Assert.That(actualArr, Is.EqualTo(expectedArr));
+        }
+
+        [Test]
+        [TestCase(new[] { 0 }, new[] { 0 })]
+        [TestCase(new[] { 2, 1 }, new[] { 2, 1 })]
+        [TestCase(new[] { 1, 0, 1 }, new[] { 1, 1, 0 })]
+        [TestCase(new[] { 0, 1, 0, 3, 12 }, new[] { 1, 3, 12, 0, 0 })]
+        [Category("ArrayInPlaceOperations")]
+        public void MoveZeroes_GetArray_ReturnsArrayWithZeroesInTheEnd(int[] testCaseArr, int[] expectedArr)
+        {
+            // Arrange
+
+            // Act
+            ArrayFunctions.MoveZeroes(testCaseArr);
+
+            // Assert
+            Assert.That(testCaseArr, Is.EqualTo(expectedArr));
+        }
+
+        [Test]
+        [TestCase(new[] { 0 }, new[] { 0 })]
+        [TestCase(new[] { 1, 2 }, new[] { 2, 1 })]
+        [TestCase(new[] { 3, 1, 2, 4 }, new[] { 2, 4, 3, 1 })]
+        [Category("ArrayInPlaceOperations")]
+        public void SortArrayByParity_GetArray_ReturnsArrayWithInTheEnd(int[] testCaseArr, int[] expectedArr)
+        {
+            // Arrange
+
+            // Act
+            ArrayFunctions.SortArrayByParity(testCaseArr);
+
+            // Assert
+            Assert.That(testCaseArr, Is.EqualTo(expectedArr));
+        }
+
     }
 }

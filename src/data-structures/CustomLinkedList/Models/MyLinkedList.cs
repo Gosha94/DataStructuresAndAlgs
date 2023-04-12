@@ -5,8 +5,8 @@ namespace CustomLinkedList.Models;
 public class MyLinkedList
 {
 
-    private ListItem _head = null;
-    private ListItem _tail = null;
+    private ListItem _head = new();
+    private ListItem _tail = new();
 
     private int _count = 0;
 
@@ -38,6 +38,30 @@ public class MyLinkedList
         }
 
         return middlePointer;
+    }
+
+    public void Reverse()
+    {
+
+        if (_head is null)
+        {
+            return;
+        }
+
+        ListItem previousPtr = null;
+        var currentPtr = _head;
+
+        _tail = _head;
+
+        while (currentPtr != null)
+        {
+            var nextPointer = currentPtr.Next;
+            currentPtr.Next = previousPtr;
+            previousPtr = currentPtr;
+            currentPtr = nextPointer;
+        }
+
+        _head = previousPtr;
     }
 
     /// <summary>
