@@ -40,11 +40,33 @@ public class MyLinkedList
         return middlePointer;
     }
 
-    public static MyLinkedList Zip(ListItem headOne, ListItem headTwo)
+    public void Merge(MyLinkedList secondLinkedList)
     {
-        var result = new MyLinkedList();
+        var tail = _head;
+        var current1 = _head.Next;
+        var current2 = secondLinkedList.GetHead();
+        var counter = 0;
 
-        return result;
+        while (current1 != null && current2 != null)
+        {
+            if (counter % 2 == 0)
+            {
+                tail.Next = current2;
+                current2 = current2.Next;
+            }
+            else
+            {
+                tail.Next = current1;
+                current1 = current1.Next;
+            }
+
+            tail = tail.Next;
+            counter++;
+        }
+        
+        if (current1 != null) { tail.Next = current1; }
+        if (current2 != null) { tail.Next = current2; }
+
     }
 
     public void Reverse()
@@ -270,6 +292,11 @@ public class MyLinkedList
             yield return current.Data;
             current = current.Next;
         }
+    }
+
+    public void AttachNodeToTail(ListItem node)
+    {
+        _tail.Next = node;
     }
 
     public int[] ToIntArray()

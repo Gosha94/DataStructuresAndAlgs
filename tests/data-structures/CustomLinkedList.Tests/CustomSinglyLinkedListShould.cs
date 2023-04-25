@@ -352,16 +352,17 @@ namespace CustomLinkedList.Tests
         [Test]
         [Category("LinkedList")]
         [TestCase(new[] { 1, 3, 5, 7, 9 }, new[] { 2, 4, 6, 8 }, new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
-        public void Zip_ReceiveTwoCorrectLinkedLists_ReturnsOneZippedLinkedList(int[] firstData, int[] secondData, int[] expectedResult)
+        public void Merge_ReceiveTwoCorrectLinkedLists_ReturnsOneMergedLinkedList(int[] firstData, int[] secondData, int[] expectedResult)
         {
             // Arrange
             var firstLinkedList = TestHelpers.CreateLinkedListFromArray(firstData);
             var secondLinkedList = TestHelpers.CreateLinkedListFromArray(secondData);
 
             // Act
-            var zippedLinkedList = MyLinkedList.Zip(firstLinkedList.GetHead(), secondLinkedList.GetHead());
-            
+            firstLinkedList.Merge(secondLinkedList);
+
             // Assert
+            CollectionAssert.AreEqual(firstLinkedList.ToIntArray(), expectedResult);
         }
 
         [Test]
