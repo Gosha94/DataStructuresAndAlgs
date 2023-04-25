@@ -40,6 +40,13 @@ public class MyLinkedList
         return middlePointer;
     }
 
+    public static MyLinkedList Zip(ListItem headOne, ListItem headTwo)
+    {
+        var result = new MyLinkedList();
+
+        return result;
+    }
+
     public void Reverse()
     {
 
@@ -263,6 +270,22 @@ public class MyLinkedList
             yield return current.Data;
             current = current.Next;
         }
+    }
+
+    public int[] ToIntArray()
+    {
+        var result = new int[Count];
+        var currentNode = _head;
+        var pointer = 0;
+
+        while (currentNode.Next != null)
+        {
+            result[pointer] = currentNode.Data;
+            currentNode = currentNode.Next;
+            pointer++;
+        }
+
+        return result;
     }
 
 }

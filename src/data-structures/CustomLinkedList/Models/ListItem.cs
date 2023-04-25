@@ -2,7 +2,6 @@
 
 public class ListItem
 {
-
     public ListItem()
     { }
 
@@ -13,18 +12,14 @@ public class ListItem
         {
             throw new ArgumentException("Значение должно быть больше либо равно 0, а также меньше либо равно 1000");
         }
-        
-        if (data == null)
-        {
-            throw new ArgumentNullException(nameof(data));
-        }
 
         Data = data;
+        Next = null;
     }
 
     public int Data { get; set; }
 
-    public ListItem Next { get; set; }
+    public ListItem? Next { get; set; }
 
     public override string ToString()
     {

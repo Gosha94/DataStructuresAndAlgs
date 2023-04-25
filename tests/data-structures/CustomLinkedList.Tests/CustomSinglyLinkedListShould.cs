@@ -349,7 +349,36 @@ namespace CustomLinkedList.Tests
 
         }
 
+        [Test]
+        [Category("LinkedList")]
+        [TestCase(new[] { 1, 3, 5, 7, 9 }, new[] { 2, 4, 6, 8 }, new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
+        public void Zip_ReceiveTwoCorrectLinkedLists_ReturnsOneZippedLinkedList(int[] firstData, int[] secondData, int[] expectedResult)
+        {
+            // Arrange
+            var firstLinkedList = TestHelpers.CreateLinkedListFromArray(firstData);
+            var secondLinkedList = TestHelpers.CreateLinkedListFromArray(secondData);
 
+            // Act
+            var zippedLinkedList = MyLinkedList.Zip(firstLinkedList.GetHead(), secondLinkedList.GetHead());
+            
+            // Assert
+        }
+
+        [Test]
+        [Category("LinkedList")]
+        [TestCase(new[] { 0 }, new[] { 0 })]
+        [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4, 5 })]
+        public void ToIntArray_ReturnsArrrayWithLinkedListElements(int[] testCaseData, int[] expectedResult)
+        {
+            // Arrange
+            var linkedList = TestHelpers.CreateLinkedListFromArray(testCaseData);
+
+            // Act
+            var actualResult = linkedList.ToIntArray();
+
+            // Assert
+            CollectionAssert.AreEqual(expectedResult, actualResult);
+        }
 
     }
 
