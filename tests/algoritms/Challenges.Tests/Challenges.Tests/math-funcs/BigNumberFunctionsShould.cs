@@ -2,11 +2,13 @@
 
 namespace Challenges.Tests.math_funcs;
 
-public class HugeNumericsFunctionsShould
+public class BigNumberFunctionsShould
 {
 
     [Theory]
     [Trait("Category", "math_funcs")]
+    [InlineData("1888abc", "1999", "")]
+    [InlineData("1888", "bca1999", "")]
     [InlineData("1888", "1999", "3887")]
     [InlineData("12345", "333", "12678")]
     [InlineData("8888", "9999", "18887")]
@@ -16,7 +18,7 @@ public class HugeNumericsFunctionsShould
         // Arrange
         
         // Act
-        var actualResult = HugeNumericsFunctions.SumTwoBigNumbers(numb1, numb2);
+        var actualResult = BigNumberFunctions.SumTwoBigNumbers(numb1, numb2);
 
         // Assert
         Assert.Equal(expectedResult, actualResult);

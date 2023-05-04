@@ -5,7 +5,7 @@ namespace Challenges.math_funcs;
 /// <summary>
 /// Функции для работы с большими числами, которые не помещаются в стандартные типы данных .NET
 /// </summary>
-public class HugeNumericsFunctions
+public class BigNumberFunctions
 {
     public static string SumTwoBigNumbers(string firstNumber, string secondNumber)
     {
@@ -66,7 +66,6 @@ public class HugeNumericsFunctions
             }
 
             tempStack.Push(sum);
-            
         }
 
         var resultStr = new StringBuilder();
@@ -86,7 +85,7 @@ public class HugeNumericsFunctions
 
     private static int ToInt(char c)
     {
-        return (int)(c - '0');
+        return c - '0';
     }
 
 }
